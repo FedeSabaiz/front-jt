@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar'
+import {ReactComponent as Girl} from '../img/girl.svg';
 
 const Layout = ({title, children}) => {
 
@@ -7,6 +8,8 @@ const Layout = ({title, children}) => {
         <>
             <Navbar />
             {children}
+            <Girl />
+
         </>
 
     );

@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Head = () => {
+const Head = ({title}) => {
     return ( 
-        <h1>Soy un Head</h1>
+        <h1>{title}</h1>
      );
 }
  

@@ -1,0 +1,19 @@
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    & > :nth-child(1){
+        margin-left: 50px;
+    }
+    & > :nth-child(2){
+        width: 50%;
+        & > ul {
+            list-style: none;
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}

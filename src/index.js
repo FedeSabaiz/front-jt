@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { ApolloProvider } from 'react-apollo-hooks';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Routes from './Routes';
-import './index.css';
+import './styles/index.scss';
 import client from './graphql';
 import * as serviceWorker from './serviceWorker';
 

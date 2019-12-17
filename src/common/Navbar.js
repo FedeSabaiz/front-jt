@@ -9,40 +9,43 @@ const Navbar = () => {
 
     return ( 
         <>
-            <div>Logo</div>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to='/' >Home</Link>
-                    </li>
-                    { isAuthenticated ? ( 
-                    <>
+            <div className="navbar">
+                <div>Logo</div>
+                <nav>
+                    <ul>
                         <li>
-                            <Link to="/me">
-                                Hola {payload.first_name} 
-                            </Link>
+                            <Link to='/' >Home</Link>
                         </li>
+                        { isAuthenticated ? ( 
+                        <>
+                            <li>
+                                <Link to="/me">
+                                    Hola {payload.first_name} 
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to='/teacher'>Dashboard</Link>
+                            </li>
+                            <li>
+                                <Link to='/logout'>Log out</Link>
+                            </li>
+                        </>) : 
+                        (<>
+                            <li>
+                                <Link to='/Signup'>Sigup</Link>
+                            </li>
+                            <li>
+                                <Link to='/login'>Log In</Link>
+                            </li>
+                        </>)
+                        }
                         <li>
-                            <Link to='/teacher'>Dashboard</Link>
+                            <Link to='/contact'>Contact</Link>
                         </li>
-                        <li>
-                            <Link to='/logout'>Log out</Link>
-                        </li>
-                    </>) : 
-                    (<>
-                        <li>
-                            <Link to='/Signup'>Sig In</Link>
-                        </li>
-                        <li>
-                            <Link to='/login'>Log In</Link>
-                        </li>
-                    </>)
-                    }
-                    <li>
-                        <Link to='/contact'>Contact</Link>
-                    </li>
-                </ul>
-            </nav>    
+                    </ul>
+                </nav>    
+            
+            </div>
         </>
     );
 }

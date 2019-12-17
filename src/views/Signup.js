@@ -83,8 +83,7 @@ function Signup({history}){
     return(
         <>
             <Layout >
-                <div className="container">
-                    <div className="row">
+                <div className="container-signup">
                         <form onSubmit={handleSubmit}>
                             < Input
                             name = "first_name"
@@ -139,11 +138,10 @@ function Signup({history}){
                             change={handleInputChange}
                             required={true}
                             />
-                            <div className="clearfix mt-4">
+                            <div >
                                 <button type="submit" className="btn btn-primary" >Registrar</button>
                             </div>
                         </form>
-                    </div>
                 </div>
             </Layout>
         </>

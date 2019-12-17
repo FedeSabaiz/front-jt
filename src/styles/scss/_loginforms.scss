@@ -1,0 +1,13 @@
+.container-login-form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & > form > :nth-child(1){
+        display: grid;
+    }
+    & > form > :nth-child(2){
+        display: grid;
+    }
+}

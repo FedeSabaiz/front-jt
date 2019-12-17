@@ -1,71 +1,44 @@
-import React from 'react';
-import { useMutation } from 'react-apollo-hooks';
-import gql from 'graphql-tag';
-import Layout from '../common/Layout';
-import Input from '../common/Input';
-import useForm from '../hooks/useForm';
-
-const LOGIN_MUTATION = gql`
-
-    mutation LOGIN($email: EmailAddress!,$password: String!,$roll:String!){
-        login(email: $email, password: $password, roll: $roll){
-            token
-        }
-    }
-
-`;
+import React, {useState} from 'react';
+import { Redirect } from 'react-router-dom';
+import Layout from './../common/Layout';
+import Head from './../common/Head';
+import Button from './../common/Button';
 
 function Login({history}){
-    const [sendLogin] = useMutation(LOGIN_MUTATION);
+    
+    const [access, setAccess] = useState({
+        roll: ''
+    })
 
-    const catchData = async (inputs) => {
-        const {data, errors} = await sendLogin({variables: { ...inputs, roll: 'T'}});
-        if(data) {
-            const { login } = data;
-            sessionStorage.setItem('jtToken', login.token);
-            history.push('/teacher');
-        }
-        if (errors) alert(`Error con tu login: ${errors}`);
-    };
-
-    const {
-        inputs,
-        handleInputChange,
-        handleSubmit
-    } = useForm(catchData);
+    const handleClick = (e) => {
+        console.log(e.target.name);
+        setAccess({
+            roll: e.target.name
+        })
+        if (e) console.log(e)
+    }
 
     return(
         <>
+            {access.roll === 'teacher' ? <Redirect to="/login-teacher"/> : <></>}
+            {access.roll === 'student' ? <Redirect to="/login-student"/> : <></>}
+
             <Layout>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-8 col-md-10 mx-auto">
-                            <form onSubmit={handleSubmit}>
-                                < Input
-                                name = "email"
-                                label = "Correo:"
-                                type = "email"
-                                placeholder = "Escribe tu email"
-                                value={inputs.email}
-                                change={handleInputChange}
-                                required={true}
-                                />
-                                < Input
-                                name = "password"
-                                label = "Password:"
-                                type = "password"
-                                placeholder = "Password"
-                                value={inputs.password}
-                                change={handleInputChange}
-                                required={true}
-                                />
-                                <div className="clearfix mt-4">
-                                    <button type="submit" className="btn btn-primary" >Entrar</button>
-                                </div>
-                            </form>
-                        </div>
+                <section className="container-login">
+                    <Head title="¿Cómo quieres acceder?" />
+                    <div className="col-access">
+                        <Button 
+                        name="teacher"
+                        click={handleClick}
+                        text="Teacher"
+                        />
+                        <Button 
+                        name="student"
+                        click={handleClick}
+                            text="Student"
+                        />
                     </div>
-                </div>
+                </section>
             </Layout>
         </>
     );

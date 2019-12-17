@@ -3,7 +3,8 @@ import React from 'react';
 const Select = ({label, idname, name, type, change, placeholder, value = 'T', required}) => {
     return (
         <>
-            <select 
+            <div>
+                <select 
                 id={idname}
                 name={name}
                 type={type}
@@ -11,10 +12,11 @@ const Select = ({label, idname, name, type, change, placeholder, value = 'T', re
                 placeholder={placeholder}
                 value={value}
                 required={required}
-            >
-                <option value="T">Teacher</option>
-                <option value="S">Student</option>
-            </select>
+                >
+                    <option value="T">Teacher</option>
+                    <option value="S">Student</option>
+                </select>
+            </div>
         </>
     );
 }

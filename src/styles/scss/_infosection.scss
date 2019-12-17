@@ -4,6 +4,19 @@
     justify-content: space-around;
     align-items: center;
     & > .col-info-card{
-        width: 400px;
+        width: 280px;
     }
+}
+
+.col-card > h1{
+    font-family: 'Anton', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.col-card > p{
+    color: white;
+    font-family: 'Poiret One', cursive;
+    font-size: 1.15rem;
+    text-align: justify;
 }

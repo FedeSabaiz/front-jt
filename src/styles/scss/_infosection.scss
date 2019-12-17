@@ -1,0 +1,9 @@
+.container-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    & > .col-info-card{
+        width: 400px;
+    }
+}

@@ -1,8 +1,21 @@
 svg {
-    width: 50px;
     height: 200px;
 }
 
 .cls-5 {
     fill: blue;
+}
+
+.col-svg, .col-svg-student{
+    display: flex;
+    justify-content: center;
+}
+// .col-svg:nth-child(1){
+//     width: 50px;
+//     height: 200px;
+// }
+
+.col-svg-student:nth-child(1){
+    width: 50px;
+    height: 200px;
 }

@@ -1,0 +1,28 @@
+footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+.more-info, .address, .terms{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.enterprise-info{
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    & > div:nth-child(2){
+        flex-direction: column;
+        & > p:nth-child(1){
+            margin: 0;
+        }
+    }
+    & > div:nth-child(2){
+        & > p:nth-child(2){
+            margin: 0;
+        }
+    }
+}

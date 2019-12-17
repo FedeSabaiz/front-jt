@@ -1,8 +1,9 @@
 @import './scss/navbar';
 @import './scss//svg';
 @import './scss//infosection';
+@import './scss/footer';
 
-html, body, .root {
+html, body, #root {
     padding: 0;
     margin: 0;
     width: 100%;

@@ -19,11 +19,11 @@ function Login({history}){
     const [sendLogin] = useMutation(LOGIN_MUTATION);
 
     const catchData = async (inputs) => {
-        const {data, errors} = await sendLogin({variables: { ...inputs, roll: 'S'}});
+        const {data, errors} = await sendLogin({variables: { ...inputs, roll: 'T'}});
         if(data) {
             const { login } = data;
             sessionStorage.setItem('jtToken', login.token);
-            history.push('/student');
+            history.push('/teacher');
         }
         if (errors) alert(`Error con tu login: ${errors}`);
     };
@@ -54,7 +54,7 @@ function Login({history}){
                         type = "password"
                         placeholder = "Password"
                         value={inputs.password}
-                        onchange={handleInputChange}
+                        change={handleInputChange}
                         required={true}
                         />
                         <div className="clearfix mt-4">
@@ -62,8 +62,6 @@ function Login({history}){
                         </div>
                     </form>
                 </div>
-            
-
             </Layout>
         </>
     );

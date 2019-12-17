@@ -17,10 +17,12 @@ const LOGIN_MUTATION = gql`
 
 function Login({history}){
     const [sendLogin] = useMutation(LOGIN_MUTATION);
-
+    
     const catchData = async (inputs) => {
+
         const {data, errors} = await sendLogin({variables: { ...inputs, roll: 'S'}});
         if(data) {
+            console.log(data)
             const { login } = data;
             sessionStorage.setItem('jtToken', login.token);
             history.push('/student');
@@ -54,7 +56,7 @@ function Login({history}){
                         type = "password"
                         placeholder = "Password"
                         value={inputs.password}
-                        onchange={handleInputChange}
+                        change={handleInputChange}
                         required={true}
                         />
                         <div className="clearfix mt-4">
@@ -62,8 +64,6 @@ function Login({history}){
                         </div>
                     </form>
                 </div>
-            
-
             </Layout>
         </>
     );

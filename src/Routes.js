@@ -7,7 +7,6 @@ import LoginTeacher from './views/LoginTeacher';
 import LoginStudent from './views/LoginStudent';
 import DashboardTeacher from './views/DashboardTeacher';
 import DashboardStudent from './views/DashboardStudent';
-import Contact from './views/Contact';
 
 function Logout(){
     sessionStorage.removeItem('jtToken');
@@ -26,7 +25,6 @@ const Routes = () => {
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/teacher" component={DashboardTeacher} />
             <Route exact path="/student" component={DashboardStudent} />
-            <Route exact path="/contact" component={Contact}  />
         </>    
     );
 }

@@ -39,9 +39,6 @@ const Navbar = () => {
                             </li>
                         </>)
                         }
-                        <li>
-                            <Link to='/contact'>Contact</Link>
-                        </li>
                     </ul>
                 </nav>    
             

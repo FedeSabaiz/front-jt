@@ -8,7 +8,7 @@ const DashboardTeacher = () => {
             <Layout>
                 <div className="container-dashboard">
                     <h1>!Bienvenido a tu panel de administracion, Teacher!</h1>
-                    <a href="https://peaceful-bastion-88494.herokuapp.com/">
+                    <a href="https://peaceful-bastion-88494.herokuapp.com/" target="_blank" rel="noopener noreferrer">
                         <Button
                             text="Iniciar llamada"
                         />
